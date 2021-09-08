@@ -5,8 +5,8 @@
       <!-- Brand logo-->
       <b-link class="brand-logo">
         <vuexy-logo />
-        <h2 class="brand-text text-primary ml-1">
-          Vuexy
+        <h2 class="brand-text text-danger ml-1">
+          MLhuillier
         </h2>
       </b-link>
       <!-- /Brand logo-->
@@ -41,10 +41,10 @@
             title-tag="h2"
             class="font-weight-bold mb-1"
           >
-            Welcome to Vuexy! 👋
+            Welcome to MLhuillier Evaluation Test! 👋
           </b-card-title>
           <b-card-text class="mb-2">
-            Please sign-in to your account and start the adventure
+            Please sign-in to your account and start the test
           </b-card-text>
 
           <!-- form -->
@@ -68,7 +68,7 @@
                     v-model="userEmail"
                     :state="errors.length > 0 ? false:null"
                     name="login-email"
-                    placeholder="john@example.com"
+                    placeholder="name@mlhuillier.com"
                   />
                   <small class="text-danger">{{ errors[0] }}</small>
                 </validation-provider>
@@ -78,7 +78,7 @@
               <b-form-group>
                 <div class="d-flex justify-content-between">
                   <label for="login-password">Password</label>
-                  <b-link :to="{name:'auth-forgot-password-v2'}">
+                  <b-link :to="{name:'register'}">
                     <small>Forgot Password?</small>
                   </b-link>
                 </div>
@@ -111,7 +111,6 @@
                   <small class="text-danger">{{ errors[0] }}</small>
                 </validation-provider>
               </b-form-group>
-
               <!-- checkbox -->
               <b-form-group>
                 <b-form-checkbox
@@ -126,7 +125,7 @@
               <!-- submit buttons -->
               <b-button
                 type="submit"
-                variant="primary"
+                variant="danger"
                 block
                 @click="validationForm"
               >
@@ -136,21 +135,21 @@
           </validation-observer>
 
           <b-card-text class="text-center mt-2">
-            <span>New on our platform? </span>
-            <b-link :to="{name:'page-auth-register-v2'}">
-              <span>&nbsp;Create an account</span>
+            <span>Don't have an account yet? </span>
+            <b-link :to="{name:'register'}">
+              <span>&nbsp;Register</span>
             </b-link>
           </b-card-text>
 
           <!-- divider -->
-          <div class="divider my-2">
+          <!-- <div class="divider my-2">
             <div class="divider-text">
               or
             </div>
-          </div>
+          </div> -->
 
           <!-- social buttons -->
-          <div class="auth-footer-btn d-flex justify-content-center">
+          <!-- <div class="auth-footer-btn d-flex justify-content-center">
             <b-button
               variant="facebook"
               href="javascript:void(0)"
@@ -175,7 +174,7 @@
             >
               <feather-icon icon="GithubIcon" />
             </b-button>
-          </div>
+          </div> -->
         </b-col>
       </b-col>
     <!-- /Login-->
@@ -220,7 +219,7 @@ export default {
       status: '',
       password: '',
       userEmail: '',
-      sideImg: require('@/assets/images/pages/login-v2.svg'),
+      sideImg: require('@/assets/images/pages/login-accept-task.svg'),
       // validation rulesimport store from '@/store/index'
       required,
       email,
@@ -233,7 +232,7 @@ export default {
     imgUrl() {
       if (store.state.appConfig.layout.skin === 'dark') {
         // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        this.sideImg = require('@/assets/images/pages/login-v2-dark.svg')
+        this.sideImg = require('@/assets/images/pages/login-accept-task.svg')
         return this.sideImg
       }
       return this.sideImg
